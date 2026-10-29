@@ -1,0 +1,1 @@
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const s=document.getElementById("copy-status");try{await navigator.clipboard.writeText(b.dataset.copy);s.textContent="Copied."}catch(e){s.textContent="Copy failed. Select the text and copy it by hand."}});

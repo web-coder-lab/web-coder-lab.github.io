@@ -1,0 +1,28 @@
+/* Home page sections after the pinned story */
+.facts{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center;padding:34px 0;border-block:1px solid var(--line)}
+.facts span{display:inline-flex;gap:8px;align-items:center;background:var(--s1);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:.92rem}.facts .i{color:var(--a)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{position:relative;overflow:hidden;background:var(--s1);border:1px solid var(--line);border-radius:30px;padding:30px;min-height:310px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.tile.wide{grid-column:span 2}.tile h3{font-size:1.5rem;margin-bottom:.3em}.tile p{color:var(--m);margin:0}
+.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 0%,color-mix(in srgb,var(--a) 14%,transparent),transparent 70%);z-index:-1}
+.viz{position:absolute;left:26px;right:26px;top:26px;height:140px}
+.viz .bars{position:absolute;inset:0;display:flex;align-items:flex-end;gap:7px}.viz .bars i{flex:1;border-radius:4px;background:var(--a);transform-origin:bottom;animation:barz 2.6s ease-in-out infinite alternate}
+.viz .bars i:nth-child(n+8):nth-child(-n+11){background:transparent;border:1.5px dashed var(--warn);height:100%!important;animation:none;opacity:.7}
+@keyframes barz{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+.viz .rows2{display:grid;gap:8px}.viz .rows2 div{display:flex;gap:10px;align-items:center;background:var(--s2);border-radius:12px;padding:9px 12px;font-size:.85rem;opacity:0;animation:rowin 6s ease-in-out infinite}
+.viz .rows2 div:nth-child(2){animation-delay:.7s}.viz .rows2 div:nth-child(3){animation-delay:1.4s}.viz .rows2 .i{color:var(--a)}
+@keyframes rowin{0%,6%{opacity:0;transform:translateY(10px)}14%,80%{opacity:1;transform:none}92%,100%{opacity:0}}
+.viz .brands{display:flex;flex-wrap:wrap;gap:8px}.viz .brands span{background:var(--s2);border-radius:99px;padding:6px 14px;font-size:.85rem;animation:glow 8s ease-in-out infinite}
+.viz .brands span:nth-child(2){animation-delay:1s}.viz .brands span:nth-child(3){animation-delay:2s}.viz .brands span:nth-child(4){animation-delay:3s}.viz .brands span:nth-child(5){animation-delay:4s}.viz .brands span:nth-child(6){animation-delay:5s}
+@keyframes glow{0%,12%,100%{background:var(--s2);color:var(--t)}4%,8%{background:var(--a);color:var(--a-ink)}}
+.viz .lock{display:grid;place-items:center;height:100%;position:relative}.viz .lock .i{width:64px;height:64px;color:var(--a)}
+.viz .lock .off{position:absolute;left:50%;top:50%;width:150px;height:3px;margin:-1px 0 0 -75px;background:var(--bad);border-radius:3px;transform:rotate(-24deg) scaleX(0);animation:strike 5s ease-in-out infinite}
+@keyframes strike{0%,25%{transform:rotate(-24deg) scaleX(0)}40%,85%{transform:rotate(-24deg) scaleX(1)}100%{transform:rotate(-24deg) scaleX(0)}}
+.viz .spin2{display:grid;place-items:center;height:100%}.viz .spin2 .i{width:70px;height:70px;color:var(--a);animation:rot 4s cubic-bezier(.5,0,.2,1) infinite}@keyframes rot{to{transform:rotate(360deg)}}
+.viz .sw{display:flex;gap:12px;height:100%;align-items:center}.viz .sw i{flex:1;height:100px;border-radius:20px;border:2px solid var(--line);animation:pick 8s ease-in-out infinite}
+.viz .sw i:nth-child(1){background:#000}.viz .sw i:nth-child(2){background:#fff;animation-delay:2s}.viz .sw i:nth-child(3){background:linear-gradient(#070707,#382e12);animation-delay:4s}.viz .sw i:nth-child(4){background:linear-gradient(#fff,#fef3c7);animation-delay:6s}
+@keyframes pick{0%,22%,100%{transform:scale(1);border-color:var(--line)}6%,16%{transform:scale(1.1);border-color:var(--a)}}
+.rel-card{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+.cta{position:relative;overflow:hidden;text-align:center;border-radius:40px;padding:clamp(48px,9vw,110px) 22px;border:1px solid var(--line);background:radial-gradient(70% 90% at 50% 0%,color-mix(in srgb,var(--a) 22%,transparent),transparent 70%),var(--s1)}
+.cta h2{font-size:clamp(2.2rem,6vw,4.6rem)}.cta p{margin:0 auto 1.4em}
+@media(max-width:899px){.tiles{grid-template-columns:1fr}.tile.wide{grid-column:auto}.rel-card{grid-template-columns:1fr}.tile{min-height:280px}}

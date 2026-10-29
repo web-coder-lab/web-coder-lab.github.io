@@ -1,0 +1,1 @@
+const bs=[...document.querySelectorAll(".jn button")],ps=[...document.querySelectorAll(".jp")];if(bs.length){const set=i=>{bs.forEach((b,j)=>{b.setAttribute("aria-pressed",j==i);b.classList.toggle("dim",j>i)});ps.forEach((p,j)=>p.hidden=j!=i)};bs.forEach((b,i)=>b.onclick=()=>set(i));set(4)}

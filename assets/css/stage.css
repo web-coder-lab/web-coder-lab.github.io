@@ -1,0 +1,32 @@
+/* Pinned scroll story: a sticky stage with a 3D phone and chapters that scroll over it. */
+.story{position:relative;margin-top:-58px}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 58% at 74% 54%,color-mix(in srgb,var(--a) 20%,transparent),transparent 70%),radial-gradient(40% 40% at 90% 12%,color-mix(in srgb,var(--a3) 18%,transparent),transparent 70%);pointer-events:none}
+.phone3d{position:absolute;right:max(22px,calc((100vw - var(--w))/2 + 34px));top:50%;transform:translateY(-50%);perspective:1700px}
+.phone-rot{transform-style:preserve-3d;transform:rotateY(-20deg) rotateX(8deg);transition:transform 1.1s cubic-bezier(.2,.7,.1,1);will-change:transform}
+.phone3d::after{content:"";position:absolute;left:12%;right:12%;bottom:-26px;height:36px;background:radial-gradient(closest-side,rgba(0,0,0,.6),transparent);filter:blur(10px);pointer-events:none}
+.floaters{position:absolute;inset:0;pointer-events:none}
+.chip{position:absolute;display:flex;gap:10px;align-items:center;background:color-mix(in srgb,var(--s1) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:10px 14px;font-size:.85rem;box-shadow:0 24px 50px -22px #000c;opacity:0;transform:translateY(22px) scale(.96);transition:opacity .8s,transform .9s cubic-bezier(.2,.7,.1,1);white-space:nowrap}
+.chip i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;font:700 .85rem var(--body);font-style:normal;flex:none}
+.chip span{display:flex;flex-direction:column;line-height:1.25}.chip b{font-size:.85rem}.chip small{color:var(--m)}.chip em{margin-left:6px;color:var(--m);font-style:normal;font-size:.75rem}
+.chip.gap{border:1.5px dashed var(--warn);color:var(--warn);flex-direction:column;gap:0;text-align:center;padding:12px 20px;font-weight:600}.chip.gap small{color:var(--warn);opacity:.8;font-weight:400}
+.chip.ok i{background:var(--a);color:var(--a-ink)}
+.stage[data-ch="0"] .chip{opacity:1;transform:none;animation:floaty 7s ease-in-out infinite alternate}
+.chip.c1{left:-34%;top:13%}.chip.c2{right:-12%;top:24%;animation-delay:-2s}.chip.c3{left:-28%;top:50%;animation-delay:-4s}.chip.c4{right:-8%;bottom:14%;animation-delay:-1s}
+@keyframes floaty{to{transform:translateY(-14px)}}
+.hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--m);font-size:.8rem;transition:opacity .5s;pointer-events:none}
+.hint i{width:22px;height:34px;border:2px solid var(--m);border-radius:12px;position:relative}.hint i::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--m);animation:wheel 1.8s ease-in-out infinite}
+@keyframes wheel{50%{transform:translateY(10px);opacity:.2}}
+.stage:not([data-ch="0"]) .hint{opacity:0}
+.chs{position:relative;margin-top:-100vh;margin-top:-100svh;z-index:2;pointer-events:none}
+.ch{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:0 22px 0 max(22px,calc((100vw - var(--w))/2 + 22px))}
+.ch .in-c{pointer-events:auto;max-width:540px;opacity:.22;transform:translateY(24px);transition:opacity .7s,transform .8s cubic-bezier(.2,.7,.1,1)}
+.ch.on .in-c{opacity:1;transform:none}
+.ch:first-child .in-c{max-width:690px}.ch h1{font-size:clamp(2.5rem,5.2vw,4.9rem)}@media(max-height:880px) and (min-width:900px){.ch .appcard{display:none}.ch h1{font-size:clamp(2.5rem,4.6vw,4.3rem)}}.ch h2{font-size:clamp(2.1rem,4.6vw,3.8rem)}
+.ch .row{margin:26px 0 0}.ch:last-child{min-height:90vh;min-height:90svh}
+@media(max-width:899px){
+ .phone3d{right:auto;left:50%;top:70px;transform:translateX(-50%)}
+ .ch{align-items:flex-end;padding:0 16px 5svh}
+ .ch .in-c{max-width:none;width:100%;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:28px;padding:20px 22px}
+ .ch:first-child .in-c{max-width:none}.ch h1{font-size:clamp(1.85rem,7.6vw,2.4rem);line-height:1.06;margin-bottom:.3em}.ch .row .btn{padding:12px 20px;font-size:.95rem}.ch .row{gap:8px}.ch h2{font-size:clamp(1.7rem,7vw,2.4rem);margin-bottom:.35em}.ch p{font-size:.98rem;margin-bottom:.6em}.ch .row{margin-top:14px}
+ .ch .appcard,.ch .lead{display:none}.floaters{display:none}.hint{display:none}}

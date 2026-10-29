@@ -1,0 +1,33 @@
+/* Page heroes, feature cards, steps, scroll zoom, 3D tilt and the coverflow ring */
+@property --rx{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --ry{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+.zm{transform:translate3d(0,var(--zy,0),0) scale(var(--zs,1));opacity:var(--zo,1);transform-origin:50% 55%;will-change:transform,opacity}
+.zm.tilt3d{transform:translate3d(0,var(--zy,0),0) scale(var(--zs,1)) perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:--rx .25s,--ry .25s}
+.phero{padding:clamp(36px,6.5vw,76px) 0 clamp(20px,4vw,44px);max-width:min(100%,780px)}
+.phero h1{font-size:clamp(2.6rem,7.2vw,5.8rem);margin:.15em 0 .22em}.phero .lead{max-width:34ch;margin:0}
+.phero .crumb{margin:0}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:18px}
+.fcard{position:relative;display:flex;flex-direction:column;gap:8px;background:var(--s1);border:1px solid var(--line);border-radius:28px;padding:26px;text-decoration:none;color:var(--t);overflow:hidden;isolation:isolate;min-height:230px}
+.fcard::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 90% 0%,color-mix(in srgb,var(--a) 14%,transparent),transparent 70%);z-index:-1;transition:opacity .3s}
+.fcard:hover{border-color:color-mix(in srgb,var(--a) 55%,var(--line))}
+.fcard .fi{width:48px;height:48px;border-radius:15px;background:color-mix(in srgb,var(--a) 14%,var(--s2));color:var(--a);display:grid;place-items:center}.fcard .fi .i{width:24px;height:24px}
+.fcard h3{margin:.4em 0 0;font-size:1.3rem}.fcard p{margin:0;color:var(--m);font-size:.98rem;flex:1}.fcard .pill{align-self:flex-start}
+.fcard.soon{border-style:dashed;background:transparent}
+.fgrid+h2,.sec h2.sub{margin-top:2.2em}
+.steps{list-style:none;margin:28px 0 0;padding:0;counter-reset:s;display:grid;gap:14px;max-width:760px}
+.steps li{display:flex;gap:20px;align-items:flex-start;background:var(--s1);border:1px solid var(--line);border-radius:26px;padding:24px 26px;font-size:1.12rem;position:relative}
+.steps .n{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 1.1rem var(--disp);background:linear-gradient(135deg,var(--a),var(--a2));color:var(--a-ink)}
+.steps li p{margin:.1em 0 0}.steps li::after{content:"";position:absolute;left:46px;top:68px;height:calc(100% - 44px + 14px - 24px);width:2px;background:linear-gradient(var(--a),transparent);opacity:.35}.steps li:last-child::after{display:none}
+.rel{position:relative}
+@keyframes spinb{to{--ang:360deg}}
+.big a svg{display:none}
+/* coverflow ring */
+.ring-wrap{display:none;perspective:1500px;position:relative;margin:34px auto 0;touch-action:pan-y;user-select:none;outline:none}
+.js .ring-wrap{display:block}.js .gal{display:none}
+.ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transition:transform .95s cubic-bezier(.2,.7,.1,1)}
+.ring .shot{position:absolute;margin:0;width:224px;backface-visibility:hidden;transition:opacity .6s,filter .6s}
+.ring .shot.off{opacity:.5;filter:saturate(.7) brightness(.8)}.ring .shot figcaption{display:none}
+.ring-ctl{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:12px}
+.ring-cap{min-width:min(100%,320px);text-align:center;color:var(--m);font-size:.95rem}.ring-cap b{display:block;color:var(--t);font:700 1.15rem var(--disp)}.ring-cap small{display:block;margin-top:4px}
+@media(max-width:899px){.phero{padding-top:36px}.fgrid{grid-template-columns:1fr}}

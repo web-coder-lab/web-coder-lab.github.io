@@ -1,0 +1,1 @@
+const p=document.getElementById("pg");if(p)addEventListener("scroll",()=>{const d=document.documentElement;p.style.transform=`scaleX(${d.scrollTop/((d.scrollHeight-innerHeight)||1)})`},{passive:true});

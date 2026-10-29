@@ -1,0 +1,18 @@
+/* Source code hub (GitLab / Bitbucket inspired) */
+.repo-h{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:clamp(28px,6vw,56px) 0 12px}.repo-h h1{font-size:clamp(1.8rem,4.5vw,2.8rem);margin:0}.repo-h img{border-radius:14px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin:.5em 0 1.2em}.badges span{display:inline-flex;gap:6px;align-items:center;font-size:.85rem;background:var(--s2);border-radius:8px;padding:3px 10px}
+.clone{display:grid;grid-template-columns:1fr auto;gap:10px;background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.clone input{background:var(--bg);color:var(--t);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:.9rem var(--mono);width:100%}
+.dls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 26px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs button{background:none;color:var(--m);border:0;border-bottom:3px solid transparent;padding:12px 16px;font:600 1rem var(--body);cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--t);border-color:var(--a)}
+.js .tp[hidden]{display:none}.tp{padding:26px 0}
+.md{max-width:80ch}.md h1{font-size:2rem}.md h2{font-size:1.5rem;margin-top:1.8em;padding-bottom:.3em;border-bottom:1px solid var(--line)}.md h3{font-size:1.2rem;margin-top:1.4em}
+.md pre{background:var(--s1);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto}.md pre code{background:none;padding:0;word-break:normal;white-space:pre}
+.md blockquote{border-left:4px solid var(--line);margin:0;padding:.2em 1em;color:var(--m)}.tw{overflow-x:auto;margin:1em 0}
+.tree,.tree ul{list-style:none;margin:0;padding-left:20px}.tree{padding:0;background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px}
+.tree summary{cursor:pointer;padding:5px 0;font-weight:600;list-style:none}.tree summary::-webkit-details-marker{display:none}
+.tree .i{margin-right:8px;color:var(--m)}.tree summary .i{color:var(--a)}.tree details{border:0;padding:0}
+.fl{display:flex;justify-content:space-between;gap:12px;padding:4px 0}.fl a{text-decoration:none;color:var(--t);word-break:break-all}.fl a:hover{color:var(--a)}.fl small{color:var(--m);white-space:nowrap}
+.prose pre{background:var(--s1);border:1px solid var(--line);border-radius:12px;padding:16px;overflow-x:auto;max-width:100%}.prose pre code{background:none;padding:0;word-break:normal;white-space:pre}

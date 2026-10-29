@@ -1,0 +1,10 @@
+/* Release page (GitHub Releases inspired) */
+.rel{border:1.5px solid transparent;border-radius:var(--r);overflow:hidden;background:linear-gradient(var(--s1),var(--s1)) padding-box,conic-gradient(from var(--ang,0deg),var(--a),var(--a2),var(--a3),var(--a)) border-box;animation:spinb 9s linear infinite}
+.rel-h{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:22px 26px;border-bottom:1px solid var(--line)}.rel-h h2{margin:0;font-size:1.6rem}
+.tagch{display:inline-flex;gap:6px;align-items:center;font:600 .88rem var(--mono);color:var(--m);background:var(--s2);border-radius:8px;padding:3px 10px}
+.rel-b{padding:22px 26px}.rel-b ul{margin:.2em 0 0}
+.assets{width:100%;border-top:1px solid var(--line)}.assets td{padding:14px 26px;border-top:1px solid var(--line);vertical-align:middle}.assets tr:first-child td{border-top:0}
+.assets a{display:inline-flex;gap:10px;align-items:center;font-weight:600;text-decoration:none}.assets a:hover{text-decoration:underline}.assets .sz{color:var(--m);text-align:right;white-space:nowrap}
+.assets code{display:block;margin-top:4px;font-weight:400}
+.vlist{list-style:none;padding:0;margin:0}.vlist li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.vlist a{display:inline-flex;gap:8px;align-items:center;text-decoration:none;font-family:var(--mono)}
+@media(max-width:620px){.assets td{display:block;padding:10px 20px;border:0}.assets tr{display:block;border-top:1px solid var(--line);padding:6px 0}.assets .sz{text-align:left}}

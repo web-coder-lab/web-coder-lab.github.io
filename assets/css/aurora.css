@@ -1,0 +1,10 @@
+/* Soft moving color fields behind the whole site (AI Studio inspired). Static with reduced motion. */
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;width:62vmax;height:62vmax;border-radius:50%;filter:blur(70px);opacity:.3;animation:drift 38s ease-in-out infinite alternate}
+.aurora i:nth-child(1){left:-18vmax;top:-24vmax;background:radial-gradient(circle,var(--a),transparent 62%)}
+.aurora i:nth-child(2){right:-22vmax;top:10vmax;background:radial-gradient(circle,var(--a2),transparent 62%);animation-duration:46s;animation-delay:-12s}
+.aurora i:nth-child(3){left:18vmax;bottom:-36vmax;background:radial-gradient(circle,var(--a3),transparent 62%);animation-duration:52s;animation-delay:-24s;opacity:.22}
+@keyframes drift{to{transform:translate3d(8vmax,5vmax,0) scale(1.12)}}
+[data-theme=light] .aurora i{opacity:.14}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.gl-on .aurora i{opacity:.16}[data-theme=light].gl-on .aurora i{opacity:.1}

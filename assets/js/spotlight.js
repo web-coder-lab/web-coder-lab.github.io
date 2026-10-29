@@ -1,0 +1,1 @@
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)addEventListener("pointermove",e=>{if(e.pointerType!="mouse")return;const b=e.target.closest&&e.target.closest(".bx");if(b){const r=b.getBoundingClientRect();b.style.setProperty("--x",e.clientX-r.left+"px");b.style.setProperty("--y",e.clientY-r.top+"px")}});

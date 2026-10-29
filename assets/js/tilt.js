@@ -1,0 +1,1 @@
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)document.querySelectorAll(".tilt").forEach(p=>{p.onpointermove=e=>{if(e.pointerType!="mouse")return;const r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;p.style.transform=`perspective(900px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`};p.onpointerleave=()=>p.style.transform=""});

@@ -1,0 +1,1 @@
+const lb=document.getElementById("lb");if(lb){const im=lb.querySelector("img");document.addEventListener("click",e=>{const f=e.target.closest&&e.target.closest("[data-full]");if(f){im.src=f.dataset.full;im.alt=f.querySelector("img").alt;lb.showModal()}});lb.querySelector("button").onclick=()=>lb.close();lb.addEventListener("click",e=>{if(e.target===lb)lb.close()})}

@@ -1,0 +1,1 @@
+document.querySelectorAll("[data-scroll]").forEach(b=>b.onclick=()=>{const t=document.querySelector(b.dataset.target);t.scrollBy({left:b.dataset.scroll*t.clientWidth*.8,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})});

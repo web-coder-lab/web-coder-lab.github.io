@@ -1,0 +1,1 @@
+const b=document.getElementById("theme");if(b)b.onclick=()=>{const n=document.documentElement.dataset.theme=="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("ng-theme",n)}catch(e){}};

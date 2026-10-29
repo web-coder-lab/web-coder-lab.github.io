@@ -1,0 +1,5 @@
+/* Design tokens. Dark is the default; light follows an Apple-like neutral. */
+:root{--bg:#04080a;--s1:#0b1311;--s2:#121d1a;--line:#1d2b27;--t:#f3f8f6;--m:#8da39a;--a:#4cf0d2;--a2:#6aa5ff;--a3:#a78bfa;--a-ink:#02201a;--warn:#ffc15a;--bad:#ff6b5e;--r:24px;--w:1180px;--sp:clamp(60px,9vw,120px);
+--disp:"SF Pro Display",Inter,"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Roboto,"Noto Sans",sans-serif;
+--body:system-ui,-apple-system,"SF Pro Text","Segoe UI",Roboto,"Noto Sans",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+[data-theme=light]{--bg:#f5f6f7;--s1:#fff;--s2:#eceff0;--line:#d8dedb;--t:#0b1512;--m:#55655f;--a:#0a7a68;--a2:#2b59c9;--a3:#6a4ed4;--a-ink:#fff;--warn:#8a5a00;--bad:#c0392b}

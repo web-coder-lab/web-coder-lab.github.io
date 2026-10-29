@@ -1,0 +1,4 @@
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vo .22s ease both}::view-transition-new(root){animation:vn .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vo{to{opacity:0;transform:translateY(-8px)}}@keyframes vn{from{opacity:0;transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}}
