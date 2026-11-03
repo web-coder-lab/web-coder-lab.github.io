@@ -27,8 +27,10 @@ if (host) {
     rot.style.transform = `rotateY(${ry * k + mx * 5 * k}deg) rotateX(${rx * k - my * 4 * k}deg)`;
   }
   function fitPhone() {
-    const s = mobile() ? Math.min(.62, (innerHeight * .5) / 812) : Math.min(1, (innerHeight - 130) / 812);
-    fit.style.setProperty('--s', Math.max(.45, s).toFixed(3));
+    const availW = mobile() ? Math.max(180, innerWidth - 36) : Math.min(380, innerWidth * .34);
+    const availH = mobile() ? innerHeight * .46 : innerHeight - 140;
+    const s = Math.min(availW / 380, availH / 812, mobile() ? .7 : 1);
+    fit.style.setProperty('--s', Math.max(.42, s).toFixed(3));
   }
   function go(i) {
     if (i === cur) return; cur = i; stage.dataset.ch = i; chs.forEach((c, j) => c.classList.toggle('on', j === i)); pose();
